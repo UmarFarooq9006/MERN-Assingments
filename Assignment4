@@ -1,0 +1,92 @@
+
+Ans:1
+function countVowel(str) {
+// find the count of vowels
+const count = str.match(/[aeiou]/gi).length;
+// return number of vowels
+return count;
+}
+// take input
+const string = prompt("Enter a string: ");
+const result = countVowel(string);
+console.log(result);
+___________________________________________
+Ans:2
+unction upper_case(str) {
+regexp = /^[A-Z]/;
+if (regexp.test(str)) {
+console.log("String's first character is uppercase");
+} else {
+console.log("String's first character is not uppercase");
+}
+}
+upper_case("Abcd");
+upper_case("abcd");
+
+____________________________________________________
+Ans:3
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<div class="mail">
+<h2>JavaScript Credit Card Number Validation</h2>
+<form name="form1" action="#">
+Credit Number: <input type='text' name='creditCradNum'/></br></br>
+<input type="submit" name="submit" value="Submit"
+onclick="creditCardValidation(document.form1.creditCradNum)"/>
+</form>
+</div>
+<script>
+function creditCardValidation(creditCradNum)
+{
+var regEx = /^5[1-5][0-9]{14}$|^2(?:2(?:2[1-9]|[3-9][0-9])|[3-6][0-9][0-
+9]|7(?:[01][0-9]|20))[0-9]{12}$/;
+if(creditCradNum.value.match(regEx))
+{
+return true;
+}
+else
+{
+alert("Please enter a valid credit card number.");
+return false;
+}
+} 
+</script>
+</body>
+</html
+_________________________________________________________
+Ans:4
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Words count in a string</title>
+</head>
+<body>
+<script>
+function WordsCount(str) {
+return str.split(" ").length;
+}
+console.log(WordsCount("hi there, I am Fahad Raza."));
+</script>
+</body>
+</html>
+_____________________________________________________________
+Ans:5
+unction email(str)
+{
+var EmailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+if(EmailFormat.test(str))
+{ 
+console.log("Valid email address!"); 
+} 
+else
+{ 
+console.log("You have entered an invalid email address!"); 
+}
+}
+email('me-info@example.com');
