@@ -1,0 +1,264 @@
+Task 1:
+Ans:
+class Shape {
+    constructor(name , sides , sideLength) 
+{
+      this.name = name;
+      this.sides = sides;
+      this.sideLength = sideLength;
+    }
+  
+    calcPerimeter() {
+    // perimeter of square formula p=4a; where a is all sides of equal length
+    // perimeter of square formula p=3(a+b+c); where a,b,c is all sides of equal length
+    let peri = this.sides*this.sideLength;
+    console.log(`Perimeter of ${this.name} is: ` + peri);
+    // document.write(`Perimeter of ${this.name} is: ` + peri);
+    }
+}
+let square = new Shape("square" , 4 , 5 );
+square.calcPerimeter();
+let triangle = new Shape("Triangle", 3 , 3);
+triangle.calcPerimeter();
+
+Task 2:
+Ans:
+let totalRuns = 0;
+
+class Player {
+    constructor(PlayerID , PlayerName , PlayerRun , PlayerDOB , PlayerShName)
+    {
+       this.PlayerID = PlayerID;
+       this.PlayerName = PlayerName;
+       this.PlayerRun = PlayerRun;
+       this.PlayerDOB = PlayerDOB;
+       this.PlayerShName = PlayerShName;
+    }
+    DisplayInfo() 
+    {
+     console.log("Player id " + this.PlayerID + " have name is "+ this.PlayerName + " make runs   "+ this.PlayerRun +" have date of birth "+this.PlayerDOB+" player shirt name "+this.PlayerShName);
+    }
+
+    GetRuns() {
+    console.log("Get Runs is :" + this.PlayerRun);
+    }
+
+     AddRuns () 
+     {
+       totalRuns = totalRuns + this.PlayerRun;
+       console.log("Total Runs of the player is :" + totalRuns);
+     }
+}
+
+let splayer = new Player(1,'Fahad',120,1997,10);
+let splayer1 = new Player(2,'Raza',150,1997,13);
+splayer.DisplayInfo();
+splayer.GetRuns();
+splayer1.DisplayInfo();
+splayer.AddRuns();
+splayer1.AddRuns();
+
+Task 3:
+Ans:
+var library = [
+    {
+        author: "Bill Gates",
+        title: "The Road Ahead",
+        readingStatus: true
+    },
+    {
+        author: "Steve Jobs",
+        title: "Waiter Isaacson",
+        readingStatus: true
+    },
+    {
+        author: "Suzanne Collins",
+        title: "Mockingjay: The final Book of the Hunger Game",
+        readingStatus: false
+    },
+];
+
+//add new object in an array
+let data = {
+    author: "Bill Gates",
+    title: "The Road Ahead",
+    readingStatus: true
+  }
+function display () {
+    for( i=0; i<library.length; i++)
+    {
+
+        if(library[i].author==data.author && library[i].title==data.title)
+        {
+            console.log(library[i].readingStatus);
+            break;
+        }
+        else
+        console.log("nott found");
+    }
+
+}
+
+display();
+
+Task 4:
+Ans:
+class Account{
+#accountId
+#accountTitle
+#balance
+#emailId
+    constructor(accountId,accountTitle,balance,emailId){
+        this.#accountId=accountId;
+        this.#accountTitle=accountTitle;
+        this.#balance=balance;
+        this.#emailId=emailId;
+    }
+    set AccountId(accountId){
+         this.#accountId=accountId;
+    }
+    get AccountId(){
+        return this.#accountId
+    }
+    set AccountTitle(accountTitle){
+        this.#accountTitle=accountTitle;
+    }
+    get AccountTitle(){
+        return this.#accountTitle
+    }
+    set balance(balance){
+        this.#balance=balance;
+    }
+    get balance(){
+        return this.#balance
+    }
+    set emailId(emailID){
+        this.#emailId=emailID;
+    }
+    get emailId(){
+        return this.#emailId
+    }
+    depositAmount(amount){
+        console.log(`New amount is ${amount}`);
+    }
+    withDrawAmount(amount,balance){
+        console.log(`The withdrwal amount is ${amount} and the remaining blance is ${balance - amount}`);
+    }
+}
+const newBank = new Account('Haris');
+newBank.depositAmount(10000);
+newBank.withDrawAmount(5000,10000);
+newBank.AccountId='0237';
+console.log("Your account id is:"+newBank.AccountId);
+
+Task 5:
+Ans:
+
+Task 6:
+Ans:
+class Employee{
+    #salary
+    #nohpd
+    constructor(salary,nohpd){
+        this.#salary=salary;
+        this.nohpd=nohpd;
+    }
+   
+    set salary(sal){
+        this.#salary=sal;
+    }
+    get salary(){
+return this.#salary;
+    }
+    set nohpd(noh){
+    this.#nohpd=noh;
+    }
+    get nohpd(){
+        return this.#nohpd;
+    }
+    getInfo(){
+        console.log("Salary is" + obj1.salary + "and no of hours per day is:"  +  obj1.nohpd);
+    }
+    AddSal(){
+if(obj1.salary<500){
+    obj1.salary=obj1.salary+10;
+}
+    }
+    AddWork(){
+if(obj1.nohpd>6){
+    obj1.salary=obj1.salary+5;
+}
+    }
+    print(){
+console.log("Your total salary is:"+obj1.salary);    
+    }
+}
+
+var obj1=new Employee;
+obj1.salary=600;
+obj1.nohpd=4;
+obj1.AddSal();
+obj1.AddWork();
+obj1.print();
+
+Task 7:
+Ans:
+class Game{
+    info(msg){
+        console.log(msg);
+    }
+}
+class Cricket extends Game{
+info(msg){
+    super.info(msg);
+   
+}
+}
+class Football extends Game{
+    info(msg){
+        super.info(msg);
+        
+    }
+}
+
+var game=new Game;
+var cricket=new Cricket;
+var football=new Football;
+
+game.info("I love game and sports");
+cricket.info("I love cricket");
+football.info("I love football");
+
+Task 8:
+Ans:
+class Car{
+constructor(name,make,color,speed){
+    this.name=name;
+    this.make=make;
+    this.color=color;
+    this.speed=speed;
+}
+
+setName(name){
+name=this.name;
+return this;
+}
+setMake(make){
+    make=this.make;
+    return this;
+}
+setColor(color){
+    color=this.color;
+    return this;
+}
+setSpeed(speed){
+    speed=this.speed;
+    return this;
+}
+print(){
+  console.log(this.name,this.make,this.color,this.speed)
+}
+}
+
+var obj1=new Car("Cultus","Suzuki","White",200)
+obj1.setName().setMake().setColor().setSpeed().print();
