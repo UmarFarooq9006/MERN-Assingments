@@ -1,0 +1,242 @@
+<html>	
+
+<head>
+<title>Calculator using JavaScript</title>
+</head>
+
+<body>
+<input type="button" value="7" onclick="button('7')">
+<input type="button" value="8" onclick="button('8')">
+<input type="button" value="9" onclick="button('9')">
+<input type="button" value="/" id="div" onclick="button('/')">
+<br>
+<input type="button" value="4" onclick="button('4')">
+<input type="button" value="5" onclick="button('5')">
+<input type="button" value="6" onclick="button('6')">
+<input type="button" value="" id="mul" onclick="button('')">
+<br>
+<input type="button" value="1" onclick="button('1')">
+<input type="button" value="2" onclick="button('2')">
+<input type="button" value="3" onclick="button('3')">
+<input type="button" value="-" id="sub" onclick="button('-')">
+<br>
+<input type="button" value="0" onclick="button('0')">
+<input type="button" value="." onclick="button('.')">
+
+<input type="button" value="=" onclick="button1()">
+<input type="button" value="+" id="add" onclick="button('+')">
+<br>
+<input type="text" id="ans">
+<input type="button" value="AC" id="clr" onclick="buttonclear()">
+
+<script>
+function button(a)
+{	
+	document.getElementById("ans").value+=a;
+}
+
+function che(){
+		var res = [];
+		var answer;
+		
+		if(document.getElementById("ans").value.includes("+")){
+		res = document.getElementById("ans").value.split('+');
+		return parseInt(res[0]) + parseInt(res[1]);
+		}
+		
+		else if(document.getElementById("ans").value.includes("-")){
+		res = document.getElementById("ans").value.split('-');
+		return parseInt(res[0]) - parseInt(res[1]);
+		}
+		
+		else if(document.getElementById("ans").value.includes("/")){
+		res = document.getElementById("ans").value.split('/');
+		return parseInt(res[0]) / parseInt(res[1]);
+		}
+		
+		else{
+		res = document.getElementById("ans").value.split('*');
+		return answer= parseInt(res[0]) * parseInt(res[1]);
+		}
+}
+		
+function button1(){	
+var a = che()
+document.getElementById('ans').value = a; 
+}
+	
+function buttonclear()
+	{
+		document.getElementById('ans').value=" ";	
+	}
+</script>
+
+</body>
+</html>
+
+
+__________________________________________________________
+
+4:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Increment and Reset counter</p>
+    <p id="count"></p>
+    <button id="inc">+</button>
+    <button id="reset">reset</button>
+
+    <script>
+        let inc = document.getElementById('inc');
+        let reset = document.getElementById('reset');
+        let count = document.getElementById('count');
+
+        let c=0;
+        count.innerText = `${c}`;
+
+        inc.addEventListener('click', () => {
+            c++; 
+            count.innerText = `${c}`;
+        }) 
+        
+        reset.addEventListener('click', () => {
+            c=0; 
+            count.innerText = `${c}`;
+        }) 
+    </script>
+</body>
+</html>
+
+________________________________________________________________
+
+3:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="number" id="numrange" value="0">
+    <div id="fibnocci"></div>
+    <div id="checkfibnocci"></div>
+    <button type="button" onclick="febo()">Check Fibnocci Series</button>
+
+    <script>
+        function febo(){
+            var num=document.getElementById("numrange").value;
+
+            if(num <=0) {
+                document.write('Invalid Number, Enter a positive integer.');
+            }
+            else {
+                for(var i = 0; i < num; i++) {
+                    document.write(fibonaccix(i) + " ");
+                }
+            }
+        }
+        function fibonaccix(num) {
+            if(num < 2) {
+                return num;
+            }
+            else {
+                return fibonaccix(num-1) + fibonaccix(num - 2);
+            }
+        }
+    </script>
+</body>
+</html>
+
+_________________________________________________________________
+
+
+2:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="result"></div>
+    <div id="checksum"></div>
+    <button type="button" onclick="sumArray()">Check Sum</button>
+
+    <script>
+        function sumArray(){
+            var arr=[1, -1, 0, -3, 5];
+            var sum=0;
+
+            for(var i=0; i < arr.length; i++){
+                if(arr[i]<0){}
+                else{
+                    sum += arr[i];
+                }
+            }
+
+            document.getElementById("checksum").innerHTML=`Sum of Positive Numbers in array[1, -1, 0, -3, 5] is : ${sum}`;
+        }
+    </script>
+    
+</body>
+</html>
+_____________________________________________________
+
+1:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="firstnum" value="0">
+    <div id="checknum"></div>
+    <button type="button" onclick="check()">Check Number</button>
+
+    <script>
+        function check(){
+            
+            var num1=document.getElementById("firstnum").value;
+            
+            if(isNaN(num1)){
+                var st= "Not Valid Number";
+                document.getElementById("checknum").innerHTML=st;
+            }
+            else{
+                if(num1==0){
+                    var st1= "Number is Zero";
+                document.getElementById("checknum").innerHTML=st1;
+                    
+                }
+                else if(num1>0){
+                    var st2= "Valid Positive Number";
+                document.getElementById("checknum").innerHTML=st2;
+                    
+                }
+                else{
+                    var st3= "Valid Negative Number";
+                document.getElementById("checknum").innerHTML=st3;
+                    
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>
